@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search Products View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchProductsViewController" customModule="SearchProducts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,13 @@
                                 <rect key="frame" x="3" y="72" width="390" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-fg-7SB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isz-qM-PEx">
+                                <rect key="frame" x="12" y="148" width="369" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Q3k-dm-TWu">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -33,18 +39,23 @@
                         <constraints>
                             <constraint firstItem="mfB-eK-S2O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="0WR-C3-4Ua"/>
                             <constraint firstItem="mfB-eK-S2O" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Fv-m4-1T0"/>
-                            <constraint firstItem="ek6-fg-7SB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kwr-Ch-Fy2"/>
+                            <constraint firstItem="Q3k-dm-TWu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CDl-dz-jCz"/>
                             <constraint firstItem="L8N-mj-Doc" firstAttribute="top" secondItem="mfB-eK-S2O" secondAttribute="bottom" constant="10" id="QQ2-vb-s6g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="isz-qM-PEx" secondAttribute="trailing" constant="12" id="XWT-Sq-W1y"/>
                             <constraint firstItem="L8N-mj-Doc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZB5-O7-DH4"/>
+                            <constraint firstItem="isz-qM-PEx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="esY-EE-mRQ"/>
                             <constraint firstItem="L8N-mj-Doc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="f5g-le-vQt"/>
                             <constraint firstItem="L8N-mj-Doc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="frd-CE-2ls"/>
                             <constraint firstItem="mfB-eK-S2O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="jyL-zo-aEf"/>
-                            <constraint firstItem="ek6-fg-7SB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pdD-Ga-uJ4"/>
+                            <constraint firstItem="Q3k-dm-TWu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="raR-dz-2LI"/>
+                            <constraint firstItem="isz-qM-PEx" firstAttribute="top" secondItem="mfB-eK-S2O" secondAttribute="bottom" constant="20" id="zSa-J6-0gu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="ek6-fg-7SB" id="gpZ-a1-cNt"/>
-                        <outlet property="tableView" destination="L8N-mj-Doc" id="t3J-XE-ISy"/>
+                        <outlet property="activityIndicator" destination="Q3k-dm-TWu" id="4vT-hu-6hy"/>
+                        <outlet property="labelError" destination="isz-qM-PEx" id="K9J-1n-keK"/>
+                        <outlet property="searchBar" destination="mfB-eK-S2O" id="0Pf-US-ZgL"/>
+                        <outlet property="tableView" destination="L8N-mj-Doc" id="Mgg-Ym-naj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchProductsViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var labelError: UILabel!
     
     
     // MARK: - Variables
@@ -24,7 +25,7 @@ class SearchViewController: UIViewController {
     
     private var searchText = "" {
         didSet {
-            
+            searchTextDidEntered()
         }
     }
     
@@ -44,6 +45,12 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Set searchbar delegate
+        searchBar.delegate = self
+        
+        // hide activity indicator
+        self.hideActivityIndicator(hide: true)
+        
         // Hide tableview initially
         self.tableView.isHidden = true
         
@@ -57,18 +64,13 @@ class SearchViewController: UIViewController {
                 /// API Success
                 /// Reload the tableview to load the data
                 DispatchQueue.main.async {
-                    self?.updateUIForResults()
-                    self?.tableView.isHidden = false
-                    self?.tableView.reloadData()
+                    self?.updateUIForResults(isSuccess: true)
                 }
             } else {
                 /// API Failure
                 /// If no data found after API call.
                 DispatchQueue.main.async {
-                    self?.updateUIForResults()
-                    self?.tableView.isHidden = true
-    
-                   // self?.emptyDataLabel.text = error.message
+                    self?.updateUIForResults(isSuccess: false, errorMessage: error.message)
                 }
             }
         }
@@ -76,13 +78,12 @@ class SearchViewController: UIViewController {
     
     func searchTextDidEntered() {
         // When initiate API call show activity indicator
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
+        self.hideActivityIndicator(hide: false)
         
         // Hide table view while calling an API
         tableView.isHidden = true
-        
-        // API Call method
+    
+        // Call getProducts api
         getProducts()
     }
     
@@ -91,15 +92,25 @@ class SearchViewController: UIViewController {
         searchViewModel.getProducts(searchText: searchText)
     }
     
-    func updateUIForResults() {
-        /// Hide activity indicator
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.hidesWhenStopped = true
+    
+    func updateUIForResults(isSuccess: Bool, errorMessage: String = "") {
+        self.hideActivityIndicator(hide: true)
+        tableView.isHidden = !isSuccess
+        labelError.isHidden = isSuccess
+        self.labelError.text = errorMessage
+        
+        //reload tableView
+        tableView.reloadData()
+    }
+    
+    func hideActivityIndicator(hide: Bool) {
+        self.activityIndicator.isHidden = hide
+        hide ? self.activityIndicator.stopAnimating() : self.activityIndicator.startAnimating()
     }
 }
 
 //MARK: - Search bar delegates
-extension SearchViewController: UISearchBarDelegate {
+extension SearchProductsViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
@@ -109,13 +120,11 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.endEditing(true)
         print(searchBar.text ?? "")
         searchText = searchBar.text ?? ""
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
     }
 }
 
 //MARK: - Search tableview data source and delegates
-extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+extension SearchProductsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         /// Get the acromine  data count from view model acromine model
         return searchViewModel.products.count

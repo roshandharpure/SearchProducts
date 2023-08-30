@@ -24,7 +24,7 @@ enum Constants {
         static let unexpected = "Unexpected error occured, Error Code"
         static let wrapperFailed = "Optional unwrapping failed. Check the response model"
         static let tryCatch = "Error Occurred in Try-Catch block"
-        static let emptyData = "Not found any data."
+        static let emptyData = "Not Data Found"
         static let none = "No error"
     }
     

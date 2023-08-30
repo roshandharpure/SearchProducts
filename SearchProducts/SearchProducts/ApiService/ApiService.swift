@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class ApiService {
     
     let urlSession: URLSession?
@@ -25,6 +24,21 @@ class ApiService {
         self.urlSession = session
     }
     
+    
+    // MARK: - Custom methods.
+    /// Acromine API call
+    func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError> {
+        guard
+            let request = prepareRequest(params: param, endpoint: Constants.ApiUrl.searchProductsUrl)
+        else {
+            return .failure(ResponseError.wrapperFailed)
+        }
+        return await callAPIServer(request)
+    }
+    
+}
+
+extension ApiService {
     
     /// A request preparation
     /// - Parameters:
@@ -78,7 +92,7 @@ class ApiService {
     /// Service request and response router gateway
     /// - Parameter urlRequest: `URLRequest` represents the connectoin
     /// - Returns: `Result` that has success response and failure has error results within it.
-    func callAPIServer<T: Decodable>(_ urlRequest: URLRequest) async -> Result<[T]?, ResponseError> {
+    func callAPIServer<T: Decodable>(_ urlRequest: URLRequest) async -> Result<T?, ResponseError> {
         guard
             let urlSession
         else {
@@ -92,24 +106,11 @@ class ApiService {
                 return .failure(error)
             }
             
-            let model = try JSONDecoder().decode([T].self, from: data)
+            let model = try JSONDecoder().decode(T.self, from: data)
             return .success(model)
         }
         catch {
             return .failure(ResponseError.tryCatch(error))
         }
-    }
-}
-
-extension ApiService {
-    // MARK: - Custom methods.
-    /// Acromine API call
-    func getProducts(param: Encodable) async -> Result<[Product]?, ServerError> {
-        guard
-            let request = prepareRequest(params: param, endpoint: Constants.ApiUrl.searchProductsUrl)
-        else {
-            return .failure(ResponseError.wrapperFailed)
-        }
-        return await callAPIServer(request)
     }
 }

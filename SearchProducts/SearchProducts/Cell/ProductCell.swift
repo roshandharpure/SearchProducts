@@ -26,12 +26,27 @@ class ProductCell: UITableViewCell {
     }
     
     /// Update the table cell with data
-    func setUpCellWith(product: Product) {
+    func setUpCellWith(product: Products) {
         labelTitle.text = product.title
         labelDescription.text = product.description
-        labelPrice.text = String(describing: product.price)
-        labelBrand.text = product.brand
-        labelRating.text = String(describing: product.rating)
+        if let brand = product.brand {
+            labelBrand.text = Constants.ProductCellText.brand + brand
+        } else {
+            labelBrand.text = Constants.ProductCellText.brand + "NA"
+        }
+        
+        if let rating = product.rating {
+            labelRating.text = Constants.ProductCellText.rating + " \(rating)"
+        } else {
+            labelRating.text = Constants.ProductCellText.rating + "NA"
+        }
+        
+        if let price = product.price {
+            labelPrice.text = Constants.ProductCellText.price + " $\(price)"
+        } else {
+            labelPrice.text = Constants.ProductCellText.price + "NA"
+        }
+    
     }
     
 }

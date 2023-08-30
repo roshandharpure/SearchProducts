@@ -10,19 +10,19 @@ import Foundation
 final class SearchViewModel {
     
     // MARK: - Variables
-    var products: [Product] = []
+    var products: [Products] = []
     var apiService: ApiService
-    var completion: (([Product]?, ServerError) -> ())?
+    var completion: (([Products]?, ServerError) -> ())?
     
     //MARK: - Init
-    init(products: [Product] = [],
+    init(products: [Products] = [],
          apiService: ApiService = ApiService()
     ) {
         self.products = products
         self.apiService = apiService
     }
 
-    //Get products list for search text
+    //Get products list from search text
     func getProducts(searchText: String) {
         if !searchText.isEmpty {
             let param = RequestModel.productSearch(q: searchText)
@@ -30,14 +30,14 @@ final class SearchViewModel {
                 let result = await apiService.getProducts(param: param)
                 switch result {
                 case .success(let model):
-                    if let model {
-                        self.products = model
+                    if let model, let products = model.products {
+                        self.products = products
                         
                         /// Send result to view with the help of completion block
-                        if model.isEmpty {
-                            completion?(model, ServerError.emptyData)
+                        if products.isEmpty {
+                            completion?(products, ServerError.emptyData)
                         } else {
-                            completion?(model, ServerError.none)
+                            completion?(products, ServerError.none)
                         }
                     }
                 case .failure(let error):

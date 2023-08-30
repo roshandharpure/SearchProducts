@@ -57,7 +57,7 @@ extension ApiService {
 
 extension URLResponse {
     
-    var errorAppeared: Error? {
+    var errorAppeared: ServerError? {
         if let httpsResponse = self as? HTTPURLResponse {
             let statusCode = httpsResponse.statusCode
             switch statusCode {
