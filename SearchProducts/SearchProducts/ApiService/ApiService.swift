@@ -7,6 +7,16 @@
 
 import Foundation
 
+// Define methods with model
+/// which are used to call respective APIs to get data
+protocol ApiServiceProtocol {
+    
+    /// Get the acromine with proper request.
+    /// - Returns: `Result` that has success response of `ProductsModel`  and failure has error results within it.
+    func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError>
+}
+
+
 class ApiService {
     
     let urlSession: URLSession?
@@ -24,21 +34,6 @@ class ApiService {
         self.urlSession = session
     }
     
-    
-    // MARK: - Custom methods.
-    /// Acromine API call
-    func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError> {
-        guard
-            let request = prepareRequest(params: param, endpoint: Constants.ApiUrl.searchProductsUrl)
-        else {
-            return .failure(ResponseError.wrapperFailed)
-        }
-        return await callAPIServer(request)
-    }
-    
-}
-
-extension ApiService {
     
     /// A request preparation
     /// - Parameters:
@@ -113,4 +108,19 @@ extension ApiService {
             return .failure(ResponseError.tryCatch(error))
         }
     }
+    
 }
+
+extension ApiService: ApiServiceProtocol {
+    // MARK: - Custom methods.
+    /// Acromine API call
+    func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError> {
+        guard
+            let request = prepareRequest(params: param, endpoint: Constants.ApiUrl.searchProductsUrl)
+        else {
+            return .failure(ResponseError.wrapperFailed)
+        }
+        return await callAPIServer(request)
+    }
+}
+

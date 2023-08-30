@@ -21,30 +21,29 @@ class ProductCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     /// Update the table cell with data
     func setUpCellWith(product: Products) {
         labelTitle.text = product.title
         labelDescription.text = product.description
+        
         if let brand = product.brand {
             labelBrand.text = Constants.ProductCellText.brand + brand
         } else {
-            labelBrand.text = Constants.ProductCellText.brand + "NA"
+            labelBrand.text = Constants.ProductCellText.brand + Constants.ProductCellText.na
         }
         
         if let rating = product.rating {
             labelRating.text = Constants.ProductCellText.rating + " \(rating)"
         } else {
-            labelRating.text = Constants.ProductCellText.rating + "NA"
+            labelRating.text = Constants.ProductCellText.rating + Constants.ProductCellText.na
         }
         
         if let price = product.price {
             labelPrice.text = Constants.ProductCellText.price + " $\(price)"
         } else {
-            labelPrice.text = Constants.ProductCellText.price + "NA"
+            labelPrice.text = Constants.ProductCellText.price + Constants.ProductCellText.na
         }
     
     }

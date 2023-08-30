@@ -23,15 +23,17 @@ struct ProductsModel: Codable {
         
     }
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        products = try values.decodeIfPresent([Products].self , forKey: .products )
-        total    = try values.decodeIfPresent(Int.self        , forKey: .total    )
-        skip     = try values.decodeIfPresent(Int.self        , forKey: .skip     )
-        limit    = try values.decodeIfPresent(Int.self        , forKey: .limit    )
-        
+    init(products:[Products]? = nil,
+         total: Int? = nil,
+         skip: Int? = nil,
+         limit: Int? = nil)
+    {
+        self.products = products
+        self.total = total
+        self.skip = skip
+        self.limit = limit
     }
+   
 }
 
 struct Products: Codable {
@@ -64,22 +66,31 @@ struct Products: Codable {
         
     }
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        id                 = try values.decodeIfPresent(Int.self      , forKey: .id                 )
-        title              = try values.decodeIfPresent(String.self   , forKey: .title              )
-        description        = try values.decodeIfPresent(String.self   , forKey: .description        )
-        price              = try values.decodeIfPresent(Int.self      , forKey: .price              )
-        discountPercentage = try values.decodeIfPresent(Double.self   , forKey: .discountPercentage )
-        rating             = try values.decodeIfPresent(Double.self   , forKey: .rating             )
-        stock              = try values.decodeIfPresent(Int.self      , forKey: .stock              )
-        brand              = try values.decodeIfPresent(String.self   , forKey: .brand              )
-        category           = try values.decodeIfPresent(String.self   , forKey: .category           )
-        thumbnail          = try values.decodeIfPresent(String.self   , forKey: .thumbnail          )
-        images             = try values.decodeIfPresent([String].self , forKey: .images             )
-        
+    init(id: Int? = nil,
+         title: String? = nil,
+         description: String? = nil,
+         price: Int? = nil,
+         discountPercentage: Double? = nil,
+         rating: Double? = nil,
+         stock: Int? = nil,
+         brand: String? = nil,
+         category: String? = nil,
+         thumbnail: String? = nil,
+         images: [String]? = nil)
+    {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.price = price
+        self.discountPercentage = discountPercentage
+        self.rating = rating
+        self.stock = stock
+        self.brand = brand
+        self.category = category
+        self.thumbnail = thumbnail
+        self.images = images
     }
+    
     
 }
 

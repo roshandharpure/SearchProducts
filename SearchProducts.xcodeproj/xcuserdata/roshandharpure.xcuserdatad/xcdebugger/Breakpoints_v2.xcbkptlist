@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4F9582AD-388E-480D-BF36-1710BD867137"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "observeProductsData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 717a287de2a720d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Product&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 717a287de2a720d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Product&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 72dd4dd9406bbe9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Products&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 72dd4dd9406bbe9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Products&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 72dd4dd9406bbfa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Products&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "AC2600F1-776F-4450-9B39-2A72A44A434A - 72dd4dd9406bbfa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SearchProducts.Products&gt;&gt;, SearchProducts.ApiService.ResponseError) -&gt; () in SearchProducts.SearchProductsViewController.observeProductsData() -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/View/SearchProductsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3D926FC-F61E-4E4E-97F6-C08C62051701"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchProducts/SearchProducts/ViewModel/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getProducts(searchText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8905C263-4588-4BB3-B8BD-EABAA92BE9E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchProducts/SearchProducts/ViewModel/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getProducts(searchText:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8905C263-4588-4BB3-B8BD-EABAA92BE9E1 - c92153225ad0e125"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SearchProducts.SearchViewModel.getProducts(searchText: Swift.String) -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  uuid = "8905C263-4588-4BB3-B8BD-EABAA92BE9E1 - c92153225ad0e125"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SearchProducts.SearchViewModel.getProducts(searchText: Swift.String) -&gt; ()"
+                  moduleName = "SearchProducts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roshandharpure/Documents/SearchProducts/SearchProducts/SearchProducts/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C0AF397-5C18-4C3F-B24A-453FB48B0740"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchProductsTests/MockApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getProducts(param:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -49,10 +49,13 @@ class SearchProductsViewController: UIViewController {
         searchBar.delegate = self
         
         // hide activity indicator
-        self.hideActivityIndicator(hide: true)
+        hideActivityIndicator(hide: true)
+        
+        //hide error messag label
+        labelError.isHidden = true
         
         // Hide tableview initially
-        self.tableView.isHidden = true
+        tableView.isHidden = true
         
         /// Register custom table view cell to show data
         tableView.register(UINib(nibName: String(describing: ProductCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductCell.self))
@@ -78,10 +81,13 @@ class SearchProductsViewController: UIViewController {
     
     func searchTextDidEntered() {
         // When initiate API call show activity indicator
-        self.hideActivityIndicator(hide: false)
+        hideActivityIndicator(hide: false)
         
         // Hide table view while calling an API
         tableView.isHidden = true
+        
+        //hide error messag label
+        labelError.isHidden = true
     
         // Call getProducts api
         getProducts()
@@ -104,7 +110,7 @@ class SearchProductsViewController: UIViewController {
     }
     
     func hideActivityIndicator(hide: Bool) {
-        self.activityIndicator.isHidden = hide
+        activityIndicator.isHidden = hide
         hide ? self.activityIndicator.stopAnimating() : self.activityIndicator.startAnimating()
     }
 }
@@ -118,7 +124,6 @@ extension SearchProductsViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
-        print(searchBar.text ?? "")
         searchText = searchBar.text ?? ""
     }
 }
@@ -126,7 +131,7 @@ extension SearchProductsViewController: UISearchBarDelegate {
 //MARK: - Search tableview data source and delegates
 extension SearchProductsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /// Get the acromine  data count from view model acromine model
+        /// Get the products  data count from view model 
         return searchViewModel.products.count
     }
     

@@ -11,12 +11,12 @@ final class SearchViewModel {
     
     // MARK: - Variables
     var products: [Products] = []
-    var apiService: ApiService
+    var apiService: ApiServiceProtocol
     var completion: (([Products]?, ServerError) -> ())?
     
     //MARK: - Init
     init(products: [Products] = [],
-         apiService: ApiService = ApiService()
+         apiService: ApiServiceProtocol = ApiService()
     ) {
         self.products = products
         self.apiService = apiService
@@ -44,7 +44,10 @@ final class SearchViewModel {
                     completion?(nil, error)
                 }
             }
+        } else {
+            completion?(nil, ServerError.emptyData)
         }
+        
     }
 }
 
