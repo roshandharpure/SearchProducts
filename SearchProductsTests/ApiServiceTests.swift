@@ -19,7 +19,7 @@ final class ApiServiceTests: XCTestCase {
     }
     
     /// Test actual API call with actual response from cloud server.
-    func testAcronymAPICall_Success() {
+    func testProductsAPICall_Success() {
         // Arrange
         let apiService = ApiService()
         
@@ -49,7 +49,7 @@ final class ApiServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testAcronymAPICall_Failure() {
+    func testPrdocutsAPICall_Failure() {
         // Arrange
         let apiService = ApiService()
         
