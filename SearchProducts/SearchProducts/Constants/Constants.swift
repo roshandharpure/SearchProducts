@@ -22,8 +22,8 @@ enum Constants {
         static let requestValidation = "Internal request failed, check the request once again."
         static let internalServer = "Internal server error."
         static let unexpected = "Unexpected error occured, Error Code"
-        static let wrapperFailed = "Optional unwrapping failed. Check the response model"
-        static let tryCatch = "Error Occurred in Try-Catch block"
+        static let wrapperFailed = "Invalid request."
+        static let tryCatch = "Invalid response"
         static let emptyData = "No Data Found"
         static let none = "No error"
     }
