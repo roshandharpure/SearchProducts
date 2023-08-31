@@ -33,7 +33,7 @@ final class SearchViewModel {
                     if let model, let products = model.products {
                         self.products = products
                         
-                        /// Send result to view with the help of completion block
+                        // Send result to view with the help of completion block
                         if products.isEmpty {
                             completion?(products, ServerError.emptyData)
                         } else {

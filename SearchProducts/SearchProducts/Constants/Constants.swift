@@ -14,7 +14,7 @@ enum Constants {
         static let searchProductsUrl = baseUrl + "products/search"
     }
     
-    /// API errors message
+    // API errors message
     enum ApiErrorMessages {
         static let noInternet = "No Internet connectivity"
         static let networkRespose = "Server is not responding. Please try after some time"
@@ -24,11 +24,11 @@ enum Constants {
         static let unexpected = "Unexpected error occured, Error Code"
         static let wrapperFailed = "Optional unwrapping failed. Check the response model"
         static let tryCatch = "Error Occurred in Try-Catch block"
-        static let emptyData = "Data Not Found"
+        static let emptyData = "No Data Found"
         static let none = "No error"
     }
     
-    //Product cell label prefix
+    //Product cell label text
     enum ProductCellText {
         static let price = "Price:"
         static let brand = "Brand:"

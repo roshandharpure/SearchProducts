@@ -7,12 +7,10 @@
 
 import Foundation
 
-// Define methods with model
-/// which are used to call respective APIs to get data
+// Define methods with model which are used to call respective APIs to get data
 protocol ApiServiceProtocol {
-    
-    /// Get the acromine with proper request.
-    /// - Returns: `Result` that has success response of `ProductsModel`  and failure has error results within it.
+    // Get the products with proper request.
+    // - Returns: `Result` that has success response of `ProductsModel`  and failure has error results within it.
     func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError>
 }
 
@@ -21,7 +19,7 @@ class ApiService {
     
     let urlSession: URLSession?
     
-    /// An enum for various HTTPMethod.
+    // An enum for various HTTPMethod.
     enum HTTPMethod: String {
         case get     = "GET"
         case post    = "POST"
@@ -113,7 +111,7 @@ class ApiService {
 
 extension ApiService: ApiServiceProtocol {
     // MARK: - Custom methods.
-    /// Acromine API call
+    /// get products API call
     func getProducts(param: Encodable) async -> Result<ProductsModel?, ServerError> {
         guard
             let request = prepareRequest(params: param, endpoint: Constants.ApiUrl.searchProductsUrl)

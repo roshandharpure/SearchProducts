@@ -11,7 +11,7 @@ typealias ServerError = ApiService.ResponseError
 
 extension ApiService {
     
-    /// The network response related error has been declared here.
+    // The network response related error has been declared here.
     enum ResponseError: Error {
         case noInternet
         case networkRespose
@@ -50,13 +50,10 @@ extension ApiService {
                 return Constants.ApiErrorMessages.none
             }
         }
-    }
-    
+    }    
 }
 
-
 extension URLResponse {
-    
     var errorAppeared: ServerError? {
         if let httpsResponse = self as? HTTPURLResponse {
             let statusCode = httpsResponse.statusCode

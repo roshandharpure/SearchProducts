@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchProductsViewController: UIViewController {
-    
+    // MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -16,7 +16,6 @@ class SearchProductsViewController: UIViewController {
     
     
     // MARK: - Variables
-    
     // Initialize view model
     lazy var searchViewModel: SearchViewModel = {
         let viewModel = SearchViewModel()
@@ -117,7 +116,6 @@ class SearchProductsViewController: UIViewController {
 
 //MARK: - Search bar delegates
 extension SearchProductsViewController: UISearchBarDelegate {
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
     }
@@ -131,7 +129,7 @@ extension SearchProductsViewController: UISearchBarDelegate {
 //MARK: - Search tableview data source and delegates
 extension SearchProductsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /// Get the products  data count from view model 
+        // Get the products  data count from view model
         return searchViewModel.products.count
     }
     
@@ -140,7 +138,7 @@ extension SearchProductsViewController: UITableViewDataSource, UITableViewDelega
             return UITableViewCell()
         }
         
-        /// Render data on tableview cell
+        // Render data on tableview cell
         cell.setUpCellWith(product: searchViewModel.products[indexPath.row])
         
         return cell

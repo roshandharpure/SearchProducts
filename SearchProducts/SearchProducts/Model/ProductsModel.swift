@@ -8,19 +8,16 @@
 import Foundation
 
 struct ProductsModel: Codable {
-    
     var products : [Products]? = []
     var total    : Int?        = nil
     var skip     : Int?        = nil
     var limit    : Int?        = nil
     
     enum CodingKeys: String, CodingKey {
-        
         case products = "products"
         case total    = "total"
         case skip     = "skip"
         case limit    = "limit"
-        
     }
     
     init(products:[Products]? = nil,
@@ -37,7 +34,6 @@ struct ProductsModel: Codable {
 }
 
 struct Products: Codable {
-    
     var id                 : Int?      = nil
     var title              : String?   = nil
     var description        : String?   = nil
@@ -51,7 +47,6 @@ struct Products: Codable {
     var images             : [String]? = []
     
     enum CodingKeys: String, CodingKey {
-        
         case id                 = "id"
         case title              = "title"
         case description        = "description"
@@ -63,7 +58,6 @@ struct Products: Codable {
         case category           = "category"
         case thumbnail          = "thumbnail"
         case images             = "images"
-        
     }
     
     init(id: Int? = nil,
@@ -90,7 +84,5 @@ struct Products: Codable {
         self.thumbnail = thumbnail
         self.images = images
     }
-    
-    
 }
 

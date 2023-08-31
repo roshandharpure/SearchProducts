@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "84F432D8-A04D-4E67-A127-C3F0010728C8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SearchProducts.xcodeproj",
+      "identifier" : "F498334F2A9F483600CF8D78",
+      "name" : "SearchProducts"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SearchProducts.xcodeproj",
+        "identifier" : "F49833652A9F483700CF8D78",
+        "name" : "SearchProductsTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SearchProducts.xcodeproj",
+        "identifier" : "F498336F2A9F483700CF8D78",
+        "name" : "SearchProductsUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
